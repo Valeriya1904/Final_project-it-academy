@@ -1,10 +1,10 @@
 import { Component } from './core/Component';
-import './components/organisms/Header';
+import './components/templates/Header';
 
 class App extends Component {
     render() {
         return `
-            <shop-header></shop-header>
+           <shop-header></shop-header>
         `
     }
 }

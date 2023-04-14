@@ -1,0 +1,41 @@
+.wrapper {
+    height: 10%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.719);
+    border-bottom: 1px solid #D9B88F;
+    transition: 0.5s;
+    position: fixed;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    &__logo {
+        text-align: center;
+    }
+    &__navigation {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.wrapper:hover {
+    background-color: #1d463486;
+    transition: 0.5s;
+}
+
+ul {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+li {
+    padding-right: 5%;
+    color: #D9B88F;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+

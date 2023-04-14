@@ -1,11 +1,11 @@
 import { Component } from "../../../core/Component";
-
+import '../../organisms/Navigation';
 class Header extends Component {
     render() {
         return `
-            <shop-link>Одежа</shop-link>
+        <shop-navigation></shop-navigation>
         `
     }
 }
 
-customElements.define('shop-header');
+customElements.define('shop-header', Header);
