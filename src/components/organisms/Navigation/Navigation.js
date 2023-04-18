@@ -1,11 +1,10 @@
-import { Component } from "../../../core/Component";
+import { Component } from '../../../core/Component';
+import '../Categories';
 import './Navigation.scss';
 
-
-
 class Navigation extends Component {
-    render() {
-        return `
+  render() {
+    return `
         <div class="wrapper">
             <div class="wrapper__logo">
                 <a class="nav-link position-relative" href="#">
@@ -13,16 +12,14 @@ class Navigation extends Component {
                 </a>
             </div>
             <div class="wrapper__navigation ">
-                <ul class="btn-toggle-nav list-unstyled d-inline-flex">
+                <ul class="__links list-unstyled d-inline-flex">
                     <li><a href="#" class="nav-link active">Home</a></li>
-                    <li><a href="#" class="nav-link">Services</a></li>
-                    <li><a href="#" class="nav-link">About us</a></li>
-                    <li><a href="#" class="nav-link">Gifting</a></li>
+                    <li><a href="#" class="nav-link">Clothes</a></li>
                     <li><a href="#" class="nav-link">About us</a></li>
                 </ul>
             </div>
             <div class="wrapper__tabs">
-                <ul class="navbar-nav list-unstyled d-inline-flex">
+                <ul class="wrapper__navbar list-unstyled d-inline-flex">
                     <li class="nav-item">
                         <a class="nav-link position-relative" href="#">
                             <img src="./assets/images/icons/cart.svg" alt="cart" width="30" height="30">
@@ -36,10 +33,8 @@ class Navigation extends Component {
                 </ul>
             </div>
         </div>
-        <div class="header-content">
-        </div>
-        `
-    }
+        `;
+  }
 }
 
 customElements.define('shop-navigation', Navigation);
