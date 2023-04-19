@@ -23,8 +23,12 @@ class Link extends Component {
     const className = this.props.class ? this.props.class : '';
     const href = this.props.href ? this.props.href : '';
     const content = this.props.content;
-    return `<a class="nav-link ${className}" href="${href}">${content}</a>`;
+
+    return `
+        <a class="nav-link ${className}" href="${href}">${content}</a>
+    `;
   }
 }
+
 
 customElements.define('shop-link', Link);

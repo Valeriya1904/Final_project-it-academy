@@ -1,6 +1,9 @@
 import { Component } from '../../../core/Component';
-import '../Categories';
+import { appPages } from '../../../constants/appPages';
+// import '../../molecules/Categories';
 import './Navigation.scss';
+import '../../molecules/MenuItems';
+
 
 class Navigation extends Component {
   render() {
@@ -11,12 +14,8 @@ class Navigation extends Component {
                     <img src="./assets/images/icons/logo.svg" alt="cart" width="90" height="90">
                 </a>
             </div>
-            <div class="wrapper__navigation ">
-                <ul class="__links list-unstyled d-inline-flex">
-                    <li><a href="#" class="nav-link active">Home</a></li>
-                    <li><a href="#" class="nav-link">Clothes</a></li>
-                    <li><a href="#" class="nav-link">About us</a></li>
-                </ul>
+            <div class="wrapper__navigation">
+                <menu-items items='${JSON.stringify(appPages)}'></menu-items>
             </div>
             <div class="wrapper__tabs">
                 <ul class="wrapper__navbar list-unstyled d-inline-flex">
