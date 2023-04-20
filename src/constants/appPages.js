@@ -13,4 +13,8 @@ export const appPages = [
     href: APP_ROUTES.about,
     label: 'About Us',
   },
+  {
+    href: APP_ROUTES.cart,
+    label: 'Cart',
+  },
 ];
