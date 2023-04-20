@@ -1,21 +1,16 @@
 import { Component } from './core/Component';
 import { routes } from './constants/routes';
 
-
-
 import './core/Router/Router';
 import './components/templates/Header';
 import './components/templates/ClothesSection';
 import './components/pages/CartPage';
 import './components/pages/CatalogPage';
-import './components/pages/ContactsPage';
+import './components/pages/AboutPage';
 import './components/pages/ErrorPage';
-import './components/pages/ProductPage';
-
-
+import './components/pages/BlogPage';
 
 class App extends Component {
-
   render() {
     const pathname = window.location.pathname;
     return `
@@ -25,9 +20,9 @@ class App extends Component {
            <main>
                 <hr class="dropdown-divider">
                  ${
-                  routes.find((route) => route.href === pathname)?.component ??
-                  '<error-page></error-page>'
-                }
+                   routes.find((route) => route.href === pathname)?.component ??
+                   '<error-page></error-page>'
+                 }
            </main>
         </div>
         `;

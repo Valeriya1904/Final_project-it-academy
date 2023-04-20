@@ -1,24 +1,24 @@
 import { APP_ROUTES } from './appRoutes';
 
-export const routes = {
-  catalog: {
+export const routes = [
+  {
     href: APP_ROUTES.catalog,
-    component: 'catalog-page',
+    component: '<catalog-page></catalog-page>',
   },
-  about: {
+  {
     href: APP_ROUTES.about,
-    component: 'about-page',
+    component: '<about-page></about-page>',
   },
-  blog: {
+  {
     href: APP_ROUTES.blog,
-    component: 'blog-page',
+    component: '<blog-page></blog-page>',
   },
-  cart: {
+  {
     href: APP_ROUTES.cart,
-    component: 'cart-page',
+    component: '<cart-page></cart-page>',
   },
-  error: {
+  {
     href: '*',
-    component: 'error-page',
+    component: '<error-page></error-page>',
   },
-};
+];

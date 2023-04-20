@@ -7,6 +7,15 @@ class MenuItems extends Component {
     return ['items', 'active-item'];
   }
 
+  isActive(menuItem) {
+    const item = this.props['active-item'];
+    if (!item) {
+      return false;
+    }
+    const activeItem = item ? JSON.parse(item) : {};
+    return menuItem.href === activeItem.href;
+  }
+
   render() {
     const items = JSON.parse(this.props.items);
 

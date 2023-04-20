@@ -24,7 +24,7 @@ class Navigation extends Component {
                             <img src="./assets/images/icons/cart.svg" alt="cart" width="30" height="30">
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item ms-5">
                         <a class="nav-link position-relative" href="#">
                             <img src="./assets/images/icons/user.svg" alt="user" width="30" height="30">
                         </a>
