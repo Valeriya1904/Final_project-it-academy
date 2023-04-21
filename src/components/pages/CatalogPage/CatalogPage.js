@@ -1,11 +1,11 @@
-import { Component } from "../../../core/Component";
+import { Component } from '../../../core/Component';
 import { PRODUCTS } from '../../../constants/products';
 
 import '../../organisms/CardList';
 
 class CatalogPage extends Component {
-    render() {
-        return `
+  render() {
+    return `
         <div class="container mt-5 pt-5 border-top">
         <div class="row">
           <div class='col-sm-9'>
@@ -13,8 +13,8 @@ class CatalogPage extends Component {
           </div>
         </div>
       </div>
-        `
-    }
+        `;
+  }
 }
 
-customElements.define('catalog-page', CatalogPage)
+customElements.define('catalog-page', CatalogPage);
