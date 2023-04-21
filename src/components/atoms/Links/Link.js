@@ -30,5 +30,4 @@ class Link extends Component {
   }
 }
 
-
 customElements.define('shop-link', Link);

@@ -9,6 +9,8 @@ import './components/pages/CatalogPage';
 import './components/pages/AboutPage';
 import './components/pages/ErrorPage';
 import './components/pages/BlogPage';
+import './components/molecules/Footer';
+import { CATEGORIES } from './constants/categories';
 
 class App extends Component {
   render() {
@@ -16,7 +18,7 @@ class App extends Component {
     return `
         <div class="main-layout">
            <shop-header></shop-header>
-           <shop-clothessection></shop-clothessection>
+           <shop-clothessection categories='${JSON.stringify(CATEGORIES)}'></shop-clothessection>
            <main>
                 <hr class="dropdown-divider">
                  ${
@@ -24,6 +26,7 @@ class App extends Component {
                    '<error-page></error-page>'
                  }
            </main>
+           <shop-footer></shop-footer>
         </div>
         `;
   }

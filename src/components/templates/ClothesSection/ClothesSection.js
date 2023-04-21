@@ -1,19 +1,22 @@
-import { CATEGORIES } from '../../../constants/categories';
 import { Component } from '../../../core/Component';
-import '../../molecules/MenuItems';
+import '../../molecules/SearchForm';
+import '../../molecules/CategoryItems';
+import './ClothesSection.scss';
+
 
 class ClothesSection extends Component {
+    static get observedAttributes() {
+        return ['categories']
+    }
   render() {
+    const categories = this.props.categories
     return `
             <div class="card text-center">
                 <div class="card-header d-flex">
                     <ul class="nav nav-tabs card-header-tabs d-flex">
-                        <menu-items items='${JSON.stringify(CATEGORIES)}'></menu-items>
+                        <category-items items='${categories}'></category-items>
                     </ul>
-                    <form class="d-flex ms-5" role="search">
-                        <input name='search' class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+                    <search-form></search-form>
                 </div>
             </div>
         `;

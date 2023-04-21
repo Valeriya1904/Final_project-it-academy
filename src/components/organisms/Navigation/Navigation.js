@@ -15,7 +15,8 @@ class Navigation extends Component {
                 </a>
             </div>
             <div class="wrapper__navigation">
-                <menu-items items='${JSON.stringify(appPages)}'></menu-items>
+                <menu-items items='${JSON.stringify(appPages)}'
+                ></menu-items>
             </div>
             <div class="wrapper__tabs">
                 <ul class="wrapper__navbar list-unstyled d-inline-flex">

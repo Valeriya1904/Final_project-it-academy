@@ -20,12 +20,16 @@ class MenuItems extends Component {
     const items = JSON.parse(this.props.items);
 
     return `
-      <ul class="__links list-unstyled d-inline-flex">
+      <ul class="__links list-unstyled d-inline-flex ">
         ${items
           .map(
             (item) =>
               `
-          <li><a class="nav-link active" href="${item.href}">${item.label}</a></li>
+              <shop-link 
+                class="${this.isActive(item) ? 'active' : ''}"
+                href="${item.href ? item.href : ''}"
+                content="${item.label}"
+              ></shop-link>
           `,
           )
           .join(' ')}

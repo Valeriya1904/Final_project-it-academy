@@ -15,14 +15,12 @@
     width: 100%;
     display: flex;
     align-items: center;
-    .__links {
+    shop-link {
+      padding-right: 5%;
+      color: #d9b88f;
+      text-transform: uppercase;
+      font-weight: 800;
       width: 100%;
-      li {
-        padding-right: 5%;
-        color: #d9b88f;
-        text-transform: uppercase;
-        font-weight: 800;
-      }
     }
   }
   &__navbar {
