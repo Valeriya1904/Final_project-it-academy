@@ -1,0 +1,7 @@
+@mixin sliceByLine($lines: 3) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines; 
+  white-space: pre-wrap;
+}
