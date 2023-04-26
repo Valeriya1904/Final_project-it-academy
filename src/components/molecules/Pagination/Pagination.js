@@ -2,6 +2,8 @@ import { APP_EVENTS } from '../../../constants/appEvents';
 import { Component } from '../../../core/Component';
 import { eventEmmiter } from '../../../core/EventEmmiter';
 
+import './Pagination.scss';
+
 class Pagination extends Component {
   static get observedAttributes() {
     return ['total', 'limit', 'current'];

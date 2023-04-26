@@ -1,5 +1,10 @@
 @import '../../../scss/mixins.scss';
 
+.card {
+  background-color: #8c4e228a;
+  border: none;
+}
+
 .fix-line-of-description {
   @include sliceByLine;
   min-height: 72px
@@ -10,6 +15,3 @@
   min-height: 48px;
 }
 
-// .card {
-//   height: 100%;
-// }

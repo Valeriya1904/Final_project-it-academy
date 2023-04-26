@@ -3,7 +3,7 @@ import { PRODUCTS } from '../../../constants/products';
 import { eventEmmiter } from '../../../core/EventEmmiter';
 import { APP_EVENTS } from '../../../constants/appEvents';
 
-
+import '../../molecules/Slider';
 import '../../molecules/Pagination';
 import '../../organisms/CardList';
 import { CATEGORIES } from '../../../constants/categories';
@@ -52,7 +52,7 @@ class CatalogPage extends Component {
     this.setState((state) => {
       return {
         ...state,
-        products: this.state.products.filter((item) => {
+        products: PRODUCTS.filter((item) => {
           return item.title.toLowerCase().includes(data.search.toLowerCase());
         }),
         currentPage: 1,
@@ -75,6 +75,7 @@ class CatalogPage extends Component {
 
   render() {
     return `
+   
     <catalog-controls categories='${JSON.stringify(CATEGORIES)}'></catalog-controls>
         <div class="container mt-5 pt-5 border-top">
         <div class="row">

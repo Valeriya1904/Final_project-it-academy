@@ -1,5 +1,6 @@
 import './main.scss';
 import './App';
+import 'swiper/css';
 
 
 const app = document.createElement('shop-app')
