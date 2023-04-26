@@ -1,24 +1,24 @@
 import { Component } from './core/Component';
 import { routes } from './constants/routes';
 
+
 import './core/Router/Router';
-import './components/templates/Header';
-import './components/templates/ClothesSection';
+import './components/templates/CatalogControls';
 import './components/pages/CartPage';
 import './components/pages/CatalogPage';
 import './components/pages/AboutPage';
 import './components/pages/ErrorPage';
 import './components/pages/BlogPage';
 import './components/molecules/Footer';
-import { CATEGORIES } from './constants/categories';
+import './components/organisms/Navigation';
+
 
 class App extends Component {
   render() {
     const pathname = window.location.pathname;
     return `
         <div class="main-layout">
-           <shop-header></shop-header>
-           <shop-clothessection categories='${JSON.stringify(CATEGORIES)}'></shop-clothessection>
+            <shop-navigation></shop-navigation>
            <main>
                 <hr class="dropdown-divider">
                  ${

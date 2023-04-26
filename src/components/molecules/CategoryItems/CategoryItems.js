@@ -29,14 +29,14 @@ class CategoryItems extends Component {
       const id = evt.target.dataset.id;
       const items = JSON.parse(this.props.items);
       const selectedCategory = items.find((item) => item.id === Number(id));
-      this.setActiveCategory(selectedCategory);
+      // this.setActiveCategory(selectedCategory);
       eventEmmiter.emit(APP_EVENTS.setCategory, { selectedCategory });
     }
   };
 
   componentDidMount() {
-    const items = JSON.parse(this.props.items);
-    this.setActiveCategory(items[0]);
+    // const items = JSON.parse(this.props.items);
+    // this.setActiveCategory(items[0]);
     this.addEventListener('click', this.setCategory);
   }
 
@@ -49,15 +49,15 @@ class CategoryItems extends Component {
     const { activeItem } = this.state;
 
     return `
-        <ul class="navbar-nav list-unstyled d-inline-flex">
+        <ul class="navbar-nav">
             ${items
-              .slice(0, 5)
+              .slice(0, 3)
               .map((item) => {
                 const isActive = activeItem?.id === item.id;
                 return `
-                <li class="nav-item">
+                <li class="nav-item ">
                     <a class="nav-link ${isActive ? 'active' : ''}" href="#" data-id="${item.id}">${
-                  item.label
+                  item.name
                 }</a>
                 </li>
                 `;
