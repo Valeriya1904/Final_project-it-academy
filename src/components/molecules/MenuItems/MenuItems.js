@@ -25,7 +25,7 @@ class MenuItems extends Component {
           .map(
             (item) =>
               `
-              <li class="nav-item">
+              <li class="nav-item mx-3">
               <route-link to="${item.href}">
                 <shop-link 
                   class="${this.isActive(item) ? 'active' : ''}"

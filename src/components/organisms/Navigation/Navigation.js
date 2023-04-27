@@ -76,9 +76,9 @@ class Navigation extends Component {
             </div>
             <div class="wrapper__tabs">
                 <ul class="wrapper__navbar list-unstyled d-inline-flex">
-                    <li class="nav-item">
+                    <li class="nav-item ">
                     <route-link to="${APP_ROUTES.cart}">
-                        <a class="nav-link position-relative" href="${APP_ROUTES.cart}">
+                        <a class="nav-link position-relative" href="#">
                             <img src="./assets/images/icons/cart.svg" alt="cart" width="30" height="30">
                             <span class="position-absolute top-5 start-100 translate-middle badge rounded-pill bg-danger">
                                 ${this.state.productsCount}

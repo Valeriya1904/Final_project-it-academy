@@ -55,7 +55,7 @@ class CategoryItems extends Component {
               .map((item) => {
                 const isActive = activeItem?.id === item.id;
                 return `
-                <li class="nav-item ">
+                <li class="nav-item">
                     <a class="nav-link ${isActive ? 'active' : ''}" href="#" data-id="${item.id}">${
                   item.name
                 }</a>
