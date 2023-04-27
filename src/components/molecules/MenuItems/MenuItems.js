@@ -25,11 +25,15 @@ class MenuItems extends Component {
           .map(
             (item) =>
               `
-              <shop-link 
-                class="${this.isActive(item) ? 'active' : ''}"
-                href="${item.href ? item.href : ''}"
-                content="${item.label}"
-              ></shop-link>
+              <li class="nav-item">
+              <route-link to="${item.href}">
+                <shop-link 
+                  class="${this.isActive(item) ? 'active' : ''}"
+                  href="${item.href ? item.href : ''}"
+                  content="${item.label}"
+                ></shop-link>
+              </route-link>
+            </li>
           `,
           )
           .join(' ')}

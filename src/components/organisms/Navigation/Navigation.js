@@ -2,12 +2,12 @@ import { Component } from '../../../core/Component';
 import { appPages } from '../../../constants/appPages';
 import { eventEmmiter } from '../../../core/EventEmmiter';
 import { APP_STORAGE_KEYS } from '../../../constants/appStorageKeys';
-// import { APP_ROUTES } from '../../../constants/appRoutes';
 import { APP_EVENTS } from '../../../constants/appEvents';
 import { storageService } from '../../../services/StorageService';
-// import '../../molecules/Categories';
 import './Navigation.scss';
 import '../../molecules/MenuItems';
+import '../../../core/Router/Link';
+import { APP_ROUTES } from '../../../constants/appRoutes';
 // import { routes } from '../../../constants/routes';
 
 
@@ -77,13 +77,15 @@ class Navigation extends Component {
             <div class="wrapper__tabs">
                 <ul class="wrapper__navbar list-unstyled d-inline-flex">
                     <li class="nav-item">
-                        <a class="nav-link position-relative" href="#">
+                    <route-link to="${APP_ROUTES.cart}">
+                        <a class="nav-link position-relative" href="${APP_ROUTES.cart}">
                             <img src="./assets/images/icons/cart.svg" alt="cart" width="30" height="30">
                             <span class="position-absolute top-5 start-100 translate-middle badge rounded-pill bg-danger">
                                 ${this.state.productsCount}
                                 <span class="visually-hidden">unread messages</span>
                             </span>
                         </a>
+                      </route-link>
                     </li>
                     <li class="nav-item ms-5">
                         <a class="nav-link position-relative" href="#">

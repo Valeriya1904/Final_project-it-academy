@@ -7,7 +7,7 @@ import './Card.scss';
 
 class Card extends Component {
   static get observedAttributes() {
-    return ['image', 'title', 'description', 'price', 'id'];
+    return ['image', 'title', 'description', 'price', 'id',];
   }
 
   addToCart = (evt) => {

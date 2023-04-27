@@ -3,4 +3,5 @@ export const APP_EVENTS = {
   setCategory: 'setCategory',
   searchProducts: 'searchProducts',
   storage: 'storage',
+  changeRoute: 'change-route',
 };
