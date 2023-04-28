@@ -1,6 +1,11 @@
 import { Component } from '../../../core/Component';
+import './Link.scss';
 
 class Link extends Component {
+  constructor() {
+    super();
+  }
+
   static get observedAttributes() {
     return ['class', 'href', 'content'];
   }
@@ -25,9 +30,13 @@ class Link extends Component {
     const content = this.props.content;
 
     return `
-        <a class="nav-link ${className}" href="${href}">${content}</a>
-    `;
+           <a class="nav-link item-link ${className}" href="${href}">
+              ${content}
+           </a>
+     
+     `;
   }
 }
 
 customElements.define('shop-link', Link);
+

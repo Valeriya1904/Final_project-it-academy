@@ -8,7 +8,7 @@ import '../../molecules/Pagination';
 import '../../organisms/CardList';
 import { CATEGORIES } from '../../../constants/categories';
 
-class CatalogPage extends Component {
+class HomePage extends Component {
   constructor() {
     super();
     this.state = {
@@ -79,10 +79,10 @@ class CatalogPage extends Component {
     <catalog-controls categories='${JSON.stringify(CATEGORIES)}'></catalog-controls>
         <div class="container mt-5 pt-5 border-top">
         <div class="row">
-          <div class='col-sm-9'>
-            <card-list products='${JSON.stringify(
-              this.sliceData(this.state.currentPage),
-            )}'></card-list>
+          <div class='col-sm-10'>
+            <card-list 
+               products='${JSON.stringify(this.sliceData(this.state.currentPage))}'>
+            </card-list>
             <div class='mt-5'>
               <shop-pagination 
                 total="${this.state.products.length}"
@@ -96,4 +96,4 @@ class CatalogPage extends Component {
   }
 }
 
-customElements.define('catalog-page', CatalogPage);
+customElements.define('home-page', HomePage);

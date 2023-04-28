@@ -3,6 +3,10 @@ import '../../atoms/Links';
 import '../../../core/Router/Link';
 
 class MenuItems extends Component {
+  constructor() {
+    super();
+  }
+
   static get observedAttributes() {
     return ['items', 'active-item'];
   }
@@ -20,25 +24,23 @@ class MenuItems extends Component {
     const items = JSON.parse(this.props.items);
 
     return `
-      <ul class="__links list-unstyled d-inline-flex ">
-        ${items
-          .map(
-            (item) =>
-              `
-              <li class="nav-item mx-3">
-              <route-link to="${item.href}">
-                <shop-link 
-                  class="${this.isActive(item) ? 'active' : ''}"
-                  href="${item.href ? item.href : ''}"
-                  content="${item.label}"
-                ></shop-link>
-              </route-link>
-            </li>
-          `,
-          )
-          .join(' ')}
-      </ul>
-         `;
+           <ul class="navbar-nav d-flex justify-content-around flex-row">
+              ${items
+                .map((item) => {
+                  return `
+                       <li class="nav-item ms-3">
+                          <route-link to="${item.href}">
+                             <shop-link class="${this.isActive(item) ? 'active' : ''}"
+                                href="${item.href ? item.href : ''}"
+                                content="${item.label}">
+                             </shop-link>
+                          </route-link>
+                       </li>
+                    `;
+                })
+                .join(' ')}  
+           </ul>
+        `;
   }
 }
 

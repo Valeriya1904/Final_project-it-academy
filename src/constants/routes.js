@@ -1,9 +1,9 @@
 import { APP_ROUTES } from './appRoutes';
 
 export const routes = {
-  catalog: {
-    href: APP_ROUTES.catalog,
-    component: 'catalog-page',
+  home: {
+    href: APP_ROUTES.home,
+    component: 'home-page',
   },
   about: {
     href: APP_ROUTES.about,
@@ -25,18 +25,19 @@ export const routes = {
     href: APP_ROUTES.admin,
     component: 'admin-page',
   },
-  signUp: {
-    href: APP_ROUTES.signUp,
-    component: 'sign-up-page',
-  },
-  signIn: {
-    href: APP_ROUTES.signIn,
-    component: 'sign-in-page',
-  },
-  signOut: {
-    href: APP_ROUTES.signOut,
-    component: 'sign-out-page',
-  },
+  // signUp: {
+  //   href: APP_ROUTES.signUp,
+  //   component: 'sign-up-page',
+  // },
+  // signIn: {
+  //   href: APP_ROUTES.signIn,
+  //   component: 'sign-in-page',
+  // },
+  // signOut: {
+  //   href: APP_ROUTES.signOut,
+  //   component: 'sign-out-page',
+  // },
+  
   error: {
     href: '*',
     component: 'error-page',

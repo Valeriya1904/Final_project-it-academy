@@ -1,6 +1,7 @@
 import { APP_EVENTS } from '../../../constants/appEvents';
 import { Component } from '../../../core/Component';
 import { eventEmmiter } from '../../../core/EventEmmiter';
+import './serchForm.scss';
 
 class SearchForm extends Component {
   onSearch = (evt) => {
@@ -26,9 +27,9 @@ class SearchForm extends Component {
 
   render() {
     return `
-        <form class="d-flex ms-5" role="search">
-          <input name='search' class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+        <form class="search d-flex ms-5" role="search">
+          <input name='search' class="form-control me-2 search__input" type="search" placeholder="Поиск..." aria-label="Search">
+          <button class="btn btn btn-secondary search__button d-flex align-items-center" type="submit">Поиск</button>
         </form>
         `;
   }

@@ -1,13 +1,13 @@
 import { Component } from './core/Component';
 import { routes } from './constants/routes';
-
 import './core/Router/Router';
 import './components/templates/CatalogControls';
 import './components/pages/CartPage';
-import './components/pages/CatalogPage';
+import './components/pages/HomePage';
 import './components/pages/AboutPage';
 import './components/pages/ErrorPage';
 import './components/pages/BlogPage';
+import './components/pages/AdminPage';
 import './components/molecules/Footer';
 import './components/organisms/Navigation';
 
@@ -19,27 +19,33 @@ class App extends Component {
            <main>
             <app-router>
               <app-route 
-                path="${routes.catalog.href}" 
-                title="Home" 
-                component="${routes.catalog.component}">
+                path="${routes.home.href}" 
+                title="Главная" 
+                component="${routes.home.component}">
               </app-route>
 
               <app-route 
                 path="${routes.blog.href}" 
-                title="Blog" 
+                title="Блог" 
                 component="${routes.blog.component}">
               </app-route>
 
               <app-route 
                 path="${routes.about.href}" 
-                title="About Us" 
+                title="О нас" 
                 component="${routes.about.component}">
               </app-route>
 
               <app-route 
                 path="${routes.cart.href}" 
-                title="Cart" 
+                title="Корзина" 
                 component="${routes.cart.component}">
+              </app-route>
+
+              <app-route 
+                path="${routes.admin.href}" 
+                title="Admin" 
+                component="${routes.admin.component}">
               </app-route>
               
               <app-route 

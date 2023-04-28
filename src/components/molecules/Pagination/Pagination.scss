@@ -1,16 +1,33 @@
+// .page-link {
+//     color: #1D4634;
+// }
+
+// .page-link:hover {
+//     color: #852515;
+//     background-color: #1d46348c;
+// }
+
+// .page-link.active {
+//     color: white;
+//     background-color: #852515;
+//     border: #852515;
+// }
+
+
 .page-link {
-    color: #1D4634;
-}
-
-.page-link:hover {
-    color: #852515;
-    background-color: #1d46348c;
-}
-
-.page-link.active {
-    color: white;
-    background-color: #852515;
-    border: #852515;
-}
+    color: rgba(0, 0, 0, 0.719);
+    background-color: transparent;
+    box-shadow: 1px 1px 2px rgb(0, 0, 0);
+    border-radius: 5px;
+    margin: 5px;
+ }
+ 
+ .page-link.active,
+ .active > .page-link {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.466);
+    border-color: transparent;
+ }
+ 
 
 
