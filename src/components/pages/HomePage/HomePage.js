@@ -2,6 +2,7 @@ import { Component } from '../../../core/Component';
 import { PRODUCTS } from '../../../constants/products';
 import { eventEmmiter } from '../../../core/EventEmmiter';
 import { APP_EVENTS } from '../../../constants/appEvents';
+import { slides } from './constants';
 
 import '../../molecules/Slider';
 import '../../molecules/Pagination';
@@ -75,7 +76,12 @@ class HomePage extends Component {
 
   render() {
     return `
-   
+    <catalog-slider slides='${JSON.stringify(slides)}'>
+      <div class="content">
+        <h3>For Women</h3>
+        <button>Shop Women's</button>
+      </div>
+    </catalog-slider>
     <catalog-controls categories='${JSON.stringify(CATEGORIES)}'></catalog-controls>
         <div class="container mt-5 pt-5 border-top">
         <div class="row">

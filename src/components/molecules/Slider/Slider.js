@@ -1,10 +1,10 @@
 import { Component } from '../../../core/Component';
-import Swiper, { Autoplay, EffectCoverflow, Navigation, Pagination } from 'swiper';
+import Swiper, { Autoplay, Pagination } from 'swiper';
 
 import './Slider.scss';
 
 import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+
 
 class Slider extends Component {
   static get observedAttributes() {
@@ -13,17 +13,13 @@ class Slider extends Component {
 
   inintSwiper() {
     new Swiper('.catalog-slider-swiper', {
-      modules: [Navigation, Pagination, Autoplay,EffectCoverflow],
+      modules: [Pagination, Autoplay],
       pagination: {
         el: '.swiper-pagination',
       },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      speed: 5000,
-      slidesPerView: 2,
-      effect: "coverflow",
+      speed: 3000,
+      slidesPerView: 1,
+      effect: 'coverflow',
       grabCursor: true,
       coverflowEffect: {
         rotate: 50,
@@ -45,7 +41,7 @@ class Slider extends Component {
   render() {
     const { width, height } = this.props;
     return `
-         <div class="it-slider-swiper swiper" style="height:${height ?? '100hv'}; width:${
+         <div class="catalog-slider-swiper swiper" style="height:${height ?? '100hv'}; width:${
       width ?? '100%'
     }">
             <div class="swiper-wrapper">
@@ -58,8 +54,6 @@ class Slider extends Component {
                 .join('  ')}
             </div>
             <div class="swiper-pagination"></div>     
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
             </div>
     `;
   }
