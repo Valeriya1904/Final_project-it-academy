@@ -7,7 +7,6 @@ class CardList extends Component {
   }
 
   render() {
-    console.log(this.props.products);
     const products = JSON.parse(this.props.products);
 
     return `
@@ -17,7 +16,7 @@ class CardList extends Component {
                 return `
                 <div class="col-sm-3 mb-3">
                     <shop-card
-                    image='${item.images[0]}'
+                    image='${item.preview}'
                         title='${item.title}'
                         price='${item.price}'
                         description='${item.description}'

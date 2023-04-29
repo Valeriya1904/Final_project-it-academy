@@ -1,9 +1,10 @@
 import { Component } from '../../../core/Component';
-import { PRODUCTS } from '../../../constants/products';
 import { eventEmmiter } from '../../../core/EventEmmiter';
 import { APP_EVENTS } from '../../../constants/appEvents';
+import { databaseService } from '../../../services/DatabaseService';
+import { FIRESTORE_KEYS } from '../../../constants/firestoreKeys';
 import { slides } from './constants';
-
+// import '../../templates/CatalogControls';
 import '../../molecules/Slider';
 import '../../molecules/Pagination';
 import '../../organisms/CardList';
@@ -13,7 +14,7 @@ class HomePage extends Component {
   constructor() {
     super();
     this.state = {
-      products: PRODUCTS,
+      products: [],
       limit: 8,
       currentPage: 1,
     };
@@ -53,7 +54,7 @@ class HomePage extends Component {
     this.setState((state) => {
       return {
         ...state,
-        products: PRODUCTS.filter((item) => {
+        products: this.state.products.filter((item) => {
           return item.title.toLowerCase().includes(data.search.toLowerCase());
         }),
         currentPage: 1,
@@ -61,7 +62,26 @@ class HomePage extends Component {
     });
   };
 
+  setProducts(products) {
+    this.setState((state) => {
+      return {
+        ...state,
+        products,
+      };
+    });
+  }
+
+  getProducts = async () => {
+    try {
+      const products = await databaseService.getCollection(FIRESTORE_KEYS.products);
+      this.setProducts(products);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   componentDidMount() {
+    this.getProducts();
     this.sliceData();
     eventEmmiter.on(APP_EVENTS.changePaginationPage, this.onChangePaginationPage);
     eventEmmiter.on(APP_EVENTS.setCategory, this.onFilterProductsByCategory);

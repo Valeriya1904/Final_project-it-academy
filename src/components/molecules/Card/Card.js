@@ -1,8 +1,8 @@
 import { Component } from '../../../core/Component';
 import { storageService } from '../../../services/StorageService';
 import { APP_STORAGE_KEYS } from '../../../constants/appStorageKeys';
-// import { eventEmmiter } from '../../../core/EventEmmiter';
-// import { APP_EVENTS } from '../../../constants/appEvents';
+import { eventEmmiter } from '../../../core/EventEmmiter';
+import { APP_EVENTS } from '../../../constants/appEvents';
 import './Card.scss';
 
 class Card extends Component {
@@ -16,7 +16,7 @@ class Card extends Component {
       storageService.setItem(APP_STORAGE_KEYS.cartData, [...allItems, this.props]);
     }
     // if (evt.target.closest('.card')) {
-    //   eventEmmiter.emit(APP_EVENTS.changeRoute, { target: `catalog/${this.props.id}` });
+    //   eventEmmiter.emit(APP_EVENTS.changeRoute, { target: `home/${this.props.id}` });
     // }
   };
 
@@ -31,9 +31,9 @@ class Card extends Component {
     const { image, title, description, price } = this.props;
     return `
         <div class="card">
-            <img src="${image}" alt="img" class="rounded">
+            <img class="card__img" src="${image}" alt="img" class="rounded">
             <div class="card-body">
-                <h5 class="card-title fix-line-of-title">${title}</h5>
+                <h5 class="card-title fix-line-of-title text-center">${title}</h5>
                 <p class="card-text fix-line-of-description">${description}</p>
                 <div class='d-flex justify-content-between align-items-center border-top pt-2'>
                 <strong class="card-title pricing-card-title mb-0">

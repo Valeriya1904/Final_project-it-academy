@@ -5,10 +5,11 @@ import { APP_STORAGE_KEYS } from '../../../constants/appStorageKeys';
 import { APP_EVENTS } from '../../../constants/appEvents';
 import { storageService } from '../../../services/StorageService';
 import { APP_ROUTES } from '../../../constants/appRoutes';
+import { ADMIN } from '../../../constants/userRoles';
 import './Navigation.scss';
 import '../../molecules/MenuItems';
 import '../../../core/Router/Link';
-// import { routes } from '../../../constants/routes';
+
 
 class Navigation extends Component {
   constructor() {
@@ -16,6 +17,10 @@ class Navigation extends Component {
     this.state = {
       productsCount: 0,
     };
+  }
+
+  static get observedAttributes() {
+    return ['user'];
   }
 
   setProductsCount = (count) => {
@@ -59,6 +64,28 @@ class Navigation extends Component {
     eventEmmiter.off(APP_EVENTS.storage, this.onStorage);
   }
 
+  getItems() {
+    const user = JSON.parse(this.props.user);
+    console.log(user);
+    if (user) {
+      if (user.email === ADMIN) {
+        return appPages.filter((menuItem) => {
+          return [APP_ROUTES.signUp, APP_ROUTES.signIn].every((item) => item !== menuItem.href);
+        });
+      } else {
+        return appPages.filter((menuItem) => {
+          return [APP_ROUTES.signUp, APP_ROUTES.signIn, APP_ROUTES.admin].every(
+            (item) => item !== menuItem.href,
+          );
+        });
+      }
+    } else {
+      return appPages.filter((menuItem) => {
+        return [APP_ROUTES.signOut, APP_ROUTES.signIn].every((item) => item !== menuItem.href);
+      });
+    }
+  }
+
   render() {
     return `
         <div class="wrapper d-flex justify-content-around align-items-center">
@@ -71,7 +98,7 @@ class Navigation extends Component {
             </div>
             <div class="wrapper__navigation">
                <menu-items 
-                  items='${JSON.stringify(appPages)}'>
+                  items='${JSON.stringify(this.getItems())}'>
                </menu-items>
             </div>
             <div class="wrapper__tabs">

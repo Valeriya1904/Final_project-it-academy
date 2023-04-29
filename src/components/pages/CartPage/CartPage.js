@@ -114,12 +114,12 @@ class CartPage extends Component {
                         <button class="btn plus text-light btn-card-item" data-id="${item.id}"">+</button>
                     </div>
                     <div class="">
-                       <img class="item__image-fit" src="${item.image}" alt="image">
+                       <img class="item__image-fit ms-2" src="${item.image}" alt="image">
                     </div>
                     <div class="item__title-products ms-2 col-2">
                         ${item.title}
                     </div>
-                    <div class="item__description col-7">
+                    <div class="item__description col-6">
                     ${item.description}
                     </div>
                     <div class="item__total-price col-1">${item.price}$</div> 

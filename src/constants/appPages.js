@@ -22,17 +22,17 @@ export const appPages = [
     href: APP_ROUTES.admin,
     label: 'Admin',
   },
-  // {
-  //   href: APP_ROUTES.signUp,
-  //   label: 'Регистрация',
-  // },
-  // {
-  //   href: APP_ROUTES.signIn,
-  //   label: 'Вход',
-  // },
-  // {
-  //   href: APP_ROUTES.signOut,
-  //   label: 'Выход',
-  // },
+  {
+    href: APP_ROUTES.signUp,
+    label: 'Регистрация',
+  },
+  {
+    href: APP_ROUTES.signIn,
+    label: 'Вход',
+  },
+  {
+    href: APP_ROUTES.signOut,
+    label: 'Выход',
+  },
 
 ];

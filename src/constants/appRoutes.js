@@ -3,9 +3,9 @@ export const APP_ROUTES = {
   blog: '/blog',
   about: '/about',
   cart: '/cart',
-  product: '/catalog/:id',
+  product: '/home/:id',
   admin: '/admin',
-  // signUp: '/sign-up',
-  // signIn: '/sign-in',
-  // signOut: '/sign-out',
+  signUp: '/sign-up',
+  signIn: '/sign-in',
+  signOut: '/sign-out',
 };

@@ -3,11 +3,14 @@
 .card {
   background-color: #8c4e228a;
   border: none;
+  &__img {
+    height: 350px
+  }
 }
 
 .fix-line-of-description {
   @include sliceByLine;
-  min-height: 72px
+  min-height: 55px
 }
 
 .fix-line-of-title {

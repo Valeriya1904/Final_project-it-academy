@@ -8,4 +8,7 @@ export const APP_EVENTS = {
   createCategory: 'createCategory',
   createProduct: 'createProduct',
   createBlog: 'createBlog',
+  signUp: 'signUp',
+  signIn: 'signIn',
+  authorizeUser: 'authorizeUser',
 };

@@ -25,18 +25,18 @@ export const routes = {
     href: APP_ROUTES.admin,
     component: 'admin-page',
   },
-  // signUp: {
-  //   href: APP_ROUTES.signUp,
-  //   component: 'sign-up-page',
-  // },
-  // signIn: {
-  //   href: APP_ROUTES.signIn,
-  //   component: 'sign-in-page',
-  // },
-  // signOut: {
-  //   href: APP_ROUTES.signOut,
-  //   component: 'sign-out-page',
-  // },
+  signUp: {
+    href: APP_ROUTES.signUp,
+    component: 'sign-up-page',
+  },
+  signIn: {
+    href: APP_ROUTES.signIn,
+    component: 'sign-in-page',
+  },
+  signOut: {
+    href: APP_ROUTES.signOut,
+    component: 'sign-out-page',
+  },
   
   error: {
     href: '*',
