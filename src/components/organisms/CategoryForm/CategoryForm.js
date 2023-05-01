@@ -2,6 +2,8 @@ import { APP_EVENTS } from '../../../constants/appEvents';
 import { Component } from '../../../core/Component';
 import { eventEmmiter } from '../../../core/EventEmmiter';
 
+import './CategoryForm.scss';
+
 class CategoryForm extends Component {
   onSubmit = (evt) => {
     evt.preventDefault();

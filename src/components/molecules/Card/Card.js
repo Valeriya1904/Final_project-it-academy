@@ -17,7 +17,7 @@ class Card extends Component {
         const allItems = storageService.getItem(APP_STORAGE_KEYS.cartData) ?? [];
         storageService.setItem(APP_STORAGE_KEYS.cartData, [...allItems, this.props]);
       } else {
-        eventEmmiter.emit(APP_EVENTS.changeRoute, { target: APP_ROUTES.signUp });
+        eventEmmiter.emit(APP_EVENTS.changeRoute, { target: APP_ROUTES.signIn });
       }
     }
   };

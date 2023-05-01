@@ -1,0 +1,51 @@
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 5%;
+  align-content: center;
+  justify-items: center;
+}
+
+.contact-card {
+    border: 1px solid #3e47116c;
+    text-align: center;
+    padding-bottom: 5%;
+    margin-bottom: 5%;
+    width: 70%;
+    height: 80%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2), 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.card-svg {
+    background-color: #3e4711;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10% 0;
+}
+
+.card-title {
+    text-transform: uppercase;
+    padding-bottom: 1%;
+    padding-top: 2%;
+    font-size: 1.3rem;
+    border-bottom: 1px solid #3e4711;
+}
+
+.card-descr {
+    font-size: 1rem;
+    padding: 2% 2%;
+}
+
+.card-btn {
+    height: 2rem;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 15px;
+    background-color: #852515;
+    color: white;
+    transition: 0.3s;
+    margin: 3% 0;
+}

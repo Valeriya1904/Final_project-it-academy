@@ -52,7 +52,7 @@ class SignInForm extends Component {
         </label>
       </div>
    
-      <button type="submit" class="btn btn-primary">Sign In</button>
+      <button type="submit" class="btn btn-dark">Sign In</button>
     </form>
     `;
   }

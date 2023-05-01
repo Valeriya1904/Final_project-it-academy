@@ -7,6 +7,7 @@ import { slides } from './constants';
 import { convertString } from '../../../utils/convertString';
 import '../../molecules/Slider';
 import '../../molecules/Pagination';
+import './HomePage.scss';
 import '../../organisms/CardList';
 
 class HomePage extends Component {
@@ -126,10 +127,7 @@ class HomePage extends Component {
   render() {
     return `
     <catalog-slider slides='${JSON.stringify(slides)}'>
-      <div class="content">
-        <h3>For Women</h3>
-        <button>Shop Women's</button>
-      </div>
+        <h3 class="slider-logo">EVANS</h3>
     </catalog-slider>
     <catalog-controls categories='${JSON.stringify(this.state.categories)}'></catalog-controls>
         <div class="container mt-5 pt-5 border-top">

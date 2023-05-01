@@ -63,9 +63,9 @@ class SignUpPage extends Component {
         <shop-preloader is-loading="${this.state.isLoading}">
             <div class="container mt-5">
                 <div class="row justify-content-center mt-5">
-                    <div class="col-6">
+                    <div class="col-6 mt-5 mb-5">
                         <div class="border p-5">
-                            <h1 class="text-center mt-5">Sign Up</h1>
+                            <h1 class="text-center mt-2">Sign Up</h1>
                             <div class="invalid-feedback d-block">${message}</div>
                             <register-form></register-form>
                         </div>

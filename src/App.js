@@ -10,9 +10,9 @@ import './components/pages/CartPage';
 import './components/pages/HomePage';
 import './components/pages/AboutPage';
 import './components/pages/ErrorPage';
-import './components/pages/BlogPage';
 import './components/pages/SignUpPage';
 import './components/pages/SignInPage';
+import './components/pages/ContactsPage';
 import './components/molecules/Preloader';
 import './components/pages/SignOutPage';
 import './components/pages/AdminPage';
@@ -87,12 +87,6 @@ class App extends Component {
               </app-route>
 
               <app-route 
-                path="${routes.blog.href}" 
-                title="Блог" 
-                component="${routes.blog.component}">
-              </app-route>
-
-              <app-route 
                 path="${routes.about.href}" 
                 title="О нас" 
                 component="${routes.about.component}">
@@ -102,6 +96,12 @@ class App extends Component {
                 path="${routes.cart.href}" 
                 title="Корзина" 
                 component="${routes.cart.component}">
+              </app-route>
+
+              <app-route 
+                path="${routes.contacts.href}" 
+                title="Contacts" 
+                component="${routes.contacts.component}">
               </app-route>
 
               <app-route 

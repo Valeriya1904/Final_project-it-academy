@@ -1,0 +1,54 @@
+.about-container {
+    text-align: center;
+    padding: 5%;
+}
+
+.about-title {
+    text-align: center;
+    padding-top: 7%;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.7rem;
+}
+
+.about-title:hover:after {
+    width: 0%;
+    border-bottom-width: 1px;
+  }
+
+.about-title::after {
+    content: "";
+    display: block;
+    position: relative;
+    z-index: -1;
+    width: 40%;
+    margin: auto;
+    border-bottom: 3px solid #8c4e22de;
+    bottom: .15em;
+    transition: all 1s;
+}
+.about-text {
+    font-family: 'Nanum Myeongjo', serif;
+    padding-bottom: 1%;
+    font-size: 1.2rem;
+}
+
+.services {
+    background-color: rgba(142, 18, 16, 1);
+    border-radius: 50px;
+}
+
+.services-title {
+    color: antiquewhite;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.services-description {
+    color: antiquewhite;
+}
+
+.services-btn {
+    border-radius: 5px;
+    background-color: antiquewhite;
+    font-weight: 700;
+}

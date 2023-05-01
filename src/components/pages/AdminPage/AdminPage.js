@@ -6,7 +6,6 @@ import { databaseService } from '../../../services/DatabaseService';
 import { forms, menuItems } from './constants';
 import '../../molecules/Tabs';
 import '../../molecules/Preloader';
-import '../../organisms/BlogForm';
 import '../../organisms/CategoryForm';
 import '../../organisms/ProductForm';
 import './AdminPage.scss';

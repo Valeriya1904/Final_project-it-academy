@@ -7,7 +7,6 @@ export const APP_EVENTS = {
   changeTab: 'change-tab',
   createCategory: 'createCategory',
   createProduct: 'createProduct',
-  createBlog: 'createBlog',
   signUp: 'signUp',
   signIn: 'signIn',
   authorizeUser: 'authorizeUser',
