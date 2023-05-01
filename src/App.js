@@ -18,6 +18,7 @@ import './components/pages/SignOutPage';
 import './components/pages/AdminPage';
 import './components/molecules/Footer';
 import './components/organisms/Navigation';
+import { storageService } from './services/StorageService';
 
 class App extends Component {
   constructor() {
@@ -51,6 +52,7 @@ class App extends Component {
     try {
       const user = await authService.authorizeUser();
       this.setUser(user);
+      storageService.setItem('user', user);
     } catch (error) {
       console.error(error);
     } finally {
@@ -78,6 +80,7 @@ class App extends Component {
            <main>
             <app-router>
               <app-route 
+                user='${JSON.stringify(this.state.user)}'
                 path="${routes.home.href}" 
                 title="Главная" 
                 component="${routes.home.component}">

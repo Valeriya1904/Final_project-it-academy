@@ -18,8 +18,18 @@ class AdminPage extends Component {
     super();
     this.state = {
       activeTab: menuItems[0],
+      categories: [],
       isLoading: false,
     };
+  }
+
+  setCaegories(categories) {
+    this.setState((state) => {
+      return {
+        ...state,
+        categories,
+      };
+    });
   }
 
   setIsLoading = (isLoading) => {
@@ -46,6 +56,7 @@ class AdminPage extends Component {
 
   createCategory = ({ detail }) => {
     databaseService.createDocument(FIRESTORE_KEYS.categories, detail.data);
+    this.getAllCategories();
   };
 
   createProduct = ({ detail }) => {
@@ -69,7 +80,20 @@ class AdminPage extends Component {
       });
   };
 
+  getAllCategories = async () => {
+    this.setIsLoading(true);
+    try {
+      const data = await databaseService.getCollection(FIRESTORE_KEYS.categories);
+      this.setCaegories(data);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      this.setIsLoading(false);
+    }
+  };
+
   componentDidMount() {
+    this.getAllCategories();
     eventEmmiter.on(APP_EVENTS.changeTab, this.onChangeTab);
     eventEmmiter.on(APP_EVENTS.createCategory, this.createCategory);
     eventEmmiter.on(APP_EVENTS.createProduct, this.createProduct);
@@ -91,7 +115,7 @@ class AdminPage extends Component {
             active-item='${JSON.stringify(this.state.activeTab)}'>
           </shop-tabs>
           <div class="mb-3 border-end border-bottom border-start p-3">
-            ${forms[this.state.activeTab.id]}
+            ${forms(this.state)[this.state.activeTab.id]}
           </div>
         </div>
       </div>

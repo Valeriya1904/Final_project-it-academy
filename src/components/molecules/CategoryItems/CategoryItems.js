@@ -28,7 +28,7 @@ class CategoryItems extends Component {
     if (evt.target.closest('.nav-link')) {
       const id = evt.target.dataset.id;
       const items = JSON.parse(this.props.items);
-      const selectedCategory = items.find((item) => item.id === Number(id));
+      const selectedCategory = items.find((item) => item.id === id);
       this.setActiveCategory(selectedCategory);
       eventEmmiter.emit(APP_EVENTS.setCategory, { selectedCategory });
     }

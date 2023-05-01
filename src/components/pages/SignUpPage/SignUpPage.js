@@ -39,6 +39,7 @@ class SignUpPage extends Component {
     this.setIsLoading(true);
     try {
       const user = await authService.signUp(data.email, data.password);
+      // storageService.removeItem('user');
       eventEmmiter.emit(APP_EVENTS.authorizeUser, { user });
       eventEmmiter.emit(APP_EVENTS.changeRoute, { target: APP_ROUTES.home });
     } catch (error) {

@@ -4,6 +4,7 @@ import { eventEmmiter } from '../../../core/EventEmmiter';
 import '../../molecules/Preloader';
 import { APP_EVENTS } from '../../../constants/appEvents';
 import { APP_ROUTES } from '../../../constants/appRoutes';
+import { storageService } from '../../../services/StorageService';
 
 class SignOutPage extends Component {
   componentDidMount() {
@@ -12,6 +13,7 @@ class SignOutPage extends Component {
       .then(() => {
         eventEmmiter.emit(APP_EVENTS.changeRoute, { target: APP_ROUTES.signIn });
         eventEmmiter.emit(APP_EVENTS.authorizeUser, { user: null });
+        storageService.removeItem('user');
       })
       .catch((error) => {
         console.error(error);

@@ -1,13 +1,16 @@
 import { Component } from '../../../core/Component';
+import { databaseService } from '../../../services/DatabaseService';
 
 class ProductPage extends Component {
   static get observedAttributes() {
     return ['id']
   }
 
+
+
+
   componentDidMount() {
-    const product = this.state.products.find((item) => item.id === this.props.id);
-    console.log(product);
+    this.getProducts();
   }
   render() {
     return `

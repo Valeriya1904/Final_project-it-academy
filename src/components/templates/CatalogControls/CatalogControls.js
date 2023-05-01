@@ -3,10 +3,12 @@ import '../../molecules/SearchForm';
 import '../../molecules/CategoryItems';
 import './CatalogControls.scss';
 
+
 class CatalogControls extends Component {
   static get observedAttributes() {
     return ['categories'];
   }
+ 
   render() {
     const categories = this.props.categories;
     return `

@@ -3,7 +3,13 @@ import { Component } from '../../../core/Component';
 import { eventEmmiter } from '../../../core/EventEmmiter';
 import { readerFile } from '../../../utils/readFile';
 
+// import '../../molecules/Preloader';
+
 class ProductForm extends Component {
+  static get observedAttributes() {
+    return ['categories'];
+  }
+
   onSubmit = (evt) => {
     evt.preventDefault();
     const preview = this.querySelector('.preview-image');
@@ -50,12 +56,24 @@ class ProductForm extends Component {
   }
 
   render() {
+    const categories = JSON.parse(this.props.categories);
+
     return `
       <form>
         <div class="mb-3">
           <label class="form-label w-100">
             <p>Title<p>
             <input name="title" type="text" class="form-control">
+          </label>
+        </div>
+        <div class="mb-3">
+          <label class="form-label w-100">
+            <p>Category<p>
+            <select class="form-select" aria-label="Default select example" name="category">
+            ${categories.map((item) => {
+              return `<option value="${item.id}">${item.name}</option>`
+            }).join(' ')}
+            </select>
           </label>
         </div>
         <div class="mb-3">

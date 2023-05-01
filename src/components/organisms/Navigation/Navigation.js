@@ -79,7 +79,7 @@ class Navigation extends Component {
       }
     } else {
       return appPages.filter((menuItem) => {
-        return [APP_ROUTES.signOut, APP_ROUTES.signIn].every((item) => item !== menuItem.href);
+        return [APP_ROUTES.signOut, APP_ROUTES.admin].every((item) => item !== menuItem.href);
       });
     }
   }

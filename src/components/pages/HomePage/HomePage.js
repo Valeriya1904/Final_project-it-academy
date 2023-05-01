@@ -4,17 +4,18 @@ import { APP_EVENTS } from '../../../constants/appEvents';
 import { databaseService } from '../../../services/DatabaseService';
 import { FIRESTORE_KEYS } from '../../../constants/firestoreKeys';
 import { slides } from './constants';
-// import '../../templates/CatalogControls';
+import { convertString } from '../../../utils/convertString';
 import '../../molecules/Slider';
 import '../../molecules/Pagination';
 import '../../organisms/CardList';
-import { CATEGORIES } from '../../../constants/categories';
 
 class HomePage extends Component {
   constructor() {
     super();
     this.state = {
       products: [],
+      filteredProducts: [],
+      categories: [],
       limit: 8,
       currentPage: 1,
     };
@@ -26,7 +27,13 @@ class HomePage extends Component {
     const start = (currentPage - 1) * limit;
     const end = currentPage * limit;
 
-    return this.state.products.slice(start, end);
+    const data = this.state.filteredProducts.length
+      ? this.state.filteredProducts
+      : this.state.products;
+
+    return data
+      .map((item) => ({ ...item, description: convertString(item.description) }))
+      .slice(start, end);
   }
 
   onChangePaginationPage = (evt) => {
@@ -43,7 +50,9 @@ class HomePage extends Component {
     this.setState((state) => {
       return {
         ...state,
-        products: PRODUCTS.filter((item) => item.category.id === selectedCategory.id),
+        filteredProducts: this.state.products.filter(
+          (item) => item.category === selectedCategory.id,
+        ),
         currentPage: 1,
       };
     });
@@ -80,9 +89,29 @@ class HomePage extends Component {
     }
   };
 
+  getAllCategories = async () => {
+    try {
+      const data = await databaseService.getCollection(FIRESTORE_KEYS.categories);
+      this.setCaegories(data);
+    } catch (error) {
+      console.error(error);
+    } finally {
+    }
+  };
+
+  setCaegories(categories) {
+    this.setState((state) => {
+      return {
+        ...state,
+        categories,
+      };
+    });
+  }
+
   componentDidMount() {
     this.getProducts();
     this.sliceData();
+    this.getAllCategories();
     eventEmmiter.on(APP_EVENTS.changePaginationPage, this.onChangePaginationPage);
     eventEmmiter.on(APP_EVENTS.setCategory, this.onFilterProductsByCategory);
     eventEmmiter.on(APP_EVENTS.searchProducts, this.onSearch);
@@ -102,7 +131,7 @@ class HomePage extends Component {
         <button>Shop Women's</button>
       </div>
     </catalog-slider>
-    <catalog-controls categories='${JSON.stringify(CATEGORIES)}'></catalog-controls>
+    <catalog-controls categories='${JSON.stringify(this.state.categories)}'></catalog-controls>
         <div class="container mt-5 pt-5 border-top">
         <div class="row">
           <div class='col-sm-10'>
