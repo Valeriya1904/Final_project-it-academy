@@ -5,7 +5,6 @@ import './Slider.scss';
 
 import 'swiper/css/pagination';
 
-
 class Slider extends Component {
   static get observedAttributes() {
     return ['slides', 'width', 'height'];
@@ -52,8 +51,7 @@ class Slider extends Component {
               `;
                 })
                 .join('  ')}
-            </div>
-            <div class="swiper-pagination"></div>     
+            </div>    
             </div>
     `;
   }
