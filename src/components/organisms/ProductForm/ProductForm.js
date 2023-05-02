@@ -70,9 +70,11 @@ class ProductForm extends Component {
           <label class="form-label w-100">
             <p>Category<p>
             <select class="form-select" aria-label="Default select example" name="category">
-            ${categories.map((item) => {
-              return `<option value="${item.id}">${item.name}</option>`
-            }).join(' ')}
+            ${categories
+              .map((item) => {
+                return `<option value="${item.id}">${item.name}</option>`;
+              })
+              .join(' ')}
             </select>
           </label>
         </div>
