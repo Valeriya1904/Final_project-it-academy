@@ -3,7 +3,6 @@ import { Component } from '../../../core/Component';
 import { eventEmmiter } from '../../../core/EventEmmiter';
 import { readerFile } from '../../../utils/readFile';
 
-// import '../../molecules/Preloader';
 
 class ProductForm extends Component {
   static get observedAttributes() {
